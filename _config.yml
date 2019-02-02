@@ -6,7 +6,14 @@
 title: Tim Klug
 subtitle: personal mind backup
 description: things the keep me some time to fugure out or just interesting
-keywords: devlopment,coding,docker,kotlin,c#,java,spring
+keywords: 
+  - devlopment
+  - coding
+  - docker
+  - kotlin
+  - c#
+  - java
+  - spring
 author: Tim Klug
 language: english
 timezone: utc+1
