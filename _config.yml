@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
-keywords:
-author: John Doe
-language:
-timezone:
+title: Tim Klug
+subtitle: personal mind backup
+description: things the keep me some time to fugure out or just interesting
+keywords: devlopment,coding,docker,kotlin,c#,java,spring
+author: Tim Klug
+language: english
+timezone: utc+1
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
