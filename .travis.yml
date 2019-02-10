@@ -14,5 +14,4 @@ before_script:
 - git config --global user.name "Tim Klug"
 - git config --global user.email "timklug22@gmail.com"
 - sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
-- heroku login
 script: npm run build
