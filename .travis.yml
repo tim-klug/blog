@@ -3,6 +3,7 @@ node_js:
 - '9'
 deploy:
   provider: heroku
+  app: tim-klug-blog
   api_key:
     secure: KnWeeIqMMwx5flPkvciT0ZJRi/6SRc5qjJ1RjEe5n0TF5wTWEKrqvBb3+D8/zbhLk5TarE4VdzOWXxU/sKvliW9/sT/l8J+nuXL75ikeQDK4s5wtI/ch+04siAWq7ecl8+4VceBTQyH2BDPKhakNM6V4eDNhQEGcV3CqUHLOXjnaM+2EFS0RHJVoDWj85w46iG9LOFHduMXsQvqaZfioKVSUIhI6xe3iOqyW9/QT3KF2067KRmGzz3WCwWw19ihSo0oOrl8fUvqSd87VD8eEi+odMTEkQYfUDKxcxnGDnJZLicBMaZtXKAXy+VBLGtv0exdwJ+K1iagW0Md+3x0Y4gXXAWL7cJFBcEcP/11k6SKIRfgoQhhk6r6Idw6DtbJNCET/d4sWXxeYqpGJS18mAPRXiaHrDAvaxnmRwteNVk1yurR1I65fnRm0uCR1eajR3PsR1URt6t87vVaXpKxkIaELI7WWm/CwkiWGacWPa9tJYHODBmc2/cXaL9B7f7BqBOlnBy8k0RLa6NW5grH1Fse4oxqfOiDjl+TdNX6Cuqptf/964OUh1ovFQlwI+4cwGnmQt3icsdm8RuwYeHviOl85ztaXZswz+TL3J81qGCyUYoxDmw51MS2GhxC1GAKvNvW5NycdxEHRwEXpvUL5ih+e+miJEU5RvsMrGc3qT+I=
 branches:
