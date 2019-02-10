@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- "9"
+
+branches:
+  only:
+  - master
+
+install:
+- npm install
+
+before_script:
+- git config --global user.name "Tim Klug"
+- git config --global user.email "timklug22@gmail.com"
+- sed -i "s/__GITHUB_TOKEN__/${__GITHUB_TOKEN__}/" _config.yml
+
+script: npm run build
