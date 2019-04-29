@@ -133,7 +133,7 @@ assumeFalse();
 assumeThat(Assumption boolean, String message, Executable execute);
 ```
 
-## generic method compared Java with C#
+## Generic method compared Java with C#
 
 `consumer<T>` --> `action<T>`
 `supplier<T>` --> `func<T>`
@@ -144,4 +144,85 @@ assumeThat(Assumption boolean, String message, Executable execute);
 `@Test` can also be placed on interfaces.
 
 ## Test Repetition
+
+Repetition for tests can be done with a fixed number of times. Templates are provided to name these tests and add predefined placeholder.
+
+Placeholder:
+
+- `{displayName}`
+- `{currentRepetition}`
+- `{totalRepetition}`
+
+```java
+@RepeatedTest(value=5, name="{displayName} run {currentIteration}")
+```
+
+It is possible to inject the a RepetitionInfo into the test function:
+
+```java
+void test(RepetitionInfo repInfo) {
+}
+```
+
+## Dynamic Tests
+
+Dynamic tests are provided through the test `TestFactory`. The factory can not be private or static.
+
+```java
+@TestFactory
+Stream<DynamicTest> test() {
+    return StreamOrigin.stream()
+        .map(input -> dynamicTest("name", () -> {
+            // test ...
+            assertThat(...);
+        }));
+}
+
+// or
+
+DynamicTest.stream(
+    someOtherStream().iterator(),
+    iteratorType -> someString, // <- Name
+    iteratorType -> assertThat(...)
+);
+```
+
+Dynamic container allows to build a tree of nested test functions.
+
+## Parameterized Tests
+
+Annotation: `@ParameterizedTest`
+
+Naming for parameterized tests can be done with placeholders.
+
+- `{index}`
+- `{arguments}`
+- `{0}` till `{n}`
+
+These placeholders can be used inside the naming:
+
+```java
+@ParameterizedTest(name="Test #{index}: id{0}")
+```
+
+To use parameterized tests a maven package must be added:
+
+`junit.jupiter-params`
+
+Example:
+
+```java
+@ParameterizedTest
+@ValueSource(longs={...})
+void test(long id) {}
+```
+
+It is also possible to inject a `TestInfo` object and a `TestReporter` into the methods parameter.
+
+```java
+@ParameterizedTest
+@ValueSource(longs={...})
+void test(long id, TestInfo info, TestReporter reporter) {
+    reporter.publishEntry("id", id);
+}
 
